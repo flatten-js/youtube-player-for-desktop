@@ -23,8 +23,12 @@ contextBridge.exposeInMainWorld(
         if (!channels.includes(channel)) return
         ipcRenderer.on(channel, handler)
       },
+      invoke: (channel, data) => {
+        const channels = ['fetch/player']
+        if (!channels.includes(channel)) return
+        return ipcRenderer.invoke(channel, data)
+      }
     },
-    key: process.env.YOUTUBE_DATA_API_KEY,
     utils: { ssToHms }
   }
 )

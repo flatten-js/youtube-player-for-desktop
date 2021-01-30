@@ -1,5 +1,5 @@
-const { ipcRenderer, key, utils } = window.api
-const player = new Player(document.getElementById('main'), key)
+const { ipcRenderer, utils } = window.api
+const player = new Player(document.getElementById('main'))
 
 window.addEventListener('contextmenu', e => {
   e.preventDefault()

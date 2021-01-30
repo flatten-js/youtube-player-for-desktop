@@ -1,8 +1,7 @@
 class Player {
-  constructor(el, key) {
+  constructor(el) {
     this.el = el
     this.i = null
-    this.key = key
     this.data = {}
     this.request = null
     this.onReady = e => {}
@@ -48,13 +47,12 @@ class Player {
 
   _onStateChange(e) {
     switch(e.data) {
-      case 0: (() => {
+      case 0:
         if (!this.data.looped) return
-        this.play()
-      })()
+        return this.play()
 
       default:
-      return
+        return
     }
   }
 
@@ -76,12 +74,8 @@ class Player {
     editable ? this.el.classList.add(modifier) : this.el.classList.remove(modifier)
   }
 
-  endpoint(id, part = "snippet") {
-    return `https://www.googleapis.com/youtube/v3/videos?id=${id}&key=${this.key}&part=${part}`
-  }
-
-  fetch(id, part) {
-    return fetch(this.endpoint(id, part)).then(res => res.json())
+  fetch(id, part = 'snippet') {
+    return ipcRenderer.invoke('fetch/player', { id, part })
   }
 
   play() {
