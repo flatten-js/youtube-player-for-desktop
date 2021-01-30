@@ -1,6 +1,4 @@
-const path = require('path')
-
-exports.ssToHms = ss => {
+const ssToHms = ss => {
   ss = Number(ss)
   const hour = 60 * 60
 

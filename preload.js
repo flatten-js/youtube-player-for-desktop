@@ -1,5 +1,4 @@
 const { contextBridge, ipcRenderer } = require('electron')
-const { ssToHms } = require('./lib/utils.js')
 
 const share_channels = [
   'update/player-thema',
@@ -28,7 +27,6 @@ contextBridge.exposeInMainWorld(
         if (!channels.includes(channel)) return
         return ipcRenderer.invoke(channel, data)
       }
-    },
-    utils: { ssToHms }
+    }
   }
 )

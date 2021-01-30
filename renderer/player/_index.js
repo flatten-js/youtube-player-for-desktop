@@ -1,4 +1,4 @@
-const { ipcRenderer, utils } = window.api
+const { ipcRenderer } = window.api
 const player = new Player(document.getElementById('main'))
 
 window.addEventListener('contextmenu', e => {
@@ -21,7 +21,7 @@ player.onReady = async e => {
   const max = document.getElementById('max')
 
   const duration = player.duration
-  max.innerHTML = utils.ssToHms(duration)
+  max.innerHTML = ssToHms(duration)
 
   const title = document.getElementById('title')
   title.innerHTML = video.snippet.title
@@ -30,11 +30,12 @@ player.onReady = async e => {
     window.addEventListener('click', e => player.toggle())
 
     playing(current => {
-      now.innerHTML = utils.ssToHms(current)
+      now.innerHTML = ssToHms(current)
       bar.style.width = (current / duration * 100) + "%"
     })
   })
 }
+
 
 ipcRenderer.on('ready', (e, data_) => {
   player.ready(data_)
