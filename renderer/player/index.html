@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' https://fonts.googleapis.com/; font-src https://fonts.gstatic.com/; script-src 'self' https://www.youtube.com/; frame-src https://www.youtube.com/; img-src https://i.ytimg.com/; connect-src https://www.googleapis.com/;">
+    <title>Youtube Player for Desktop</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/normalize.css">
+    <link rel="stylesheet" href="../assets/css/player.css">
+  </head>
+  <body>
+    <main id="main" class="player">
+      <div class="player__core" id="player"></div>
+      <h1 class="player__title" id="title"></h1>
+      <div class="player-play-bar">
+        <div class="player-play-bar__bar" id="bar"></div>
+      </div>
+      <div class="player-details">
+        <div class="player-details__time" id="time">
+          <span id="now">0:00</span> / <span id="max">0:00</span>
+        </div>
+      </div>
+    </main>
+
+    <script src="../assets/js/player.js"></script>
+    <script src="./_index.js"></script>
+  </body>
+</html>

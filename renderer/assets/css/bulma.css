@@ -1,0 +1,9 @@
+body {
+  padding: 1rem;
+}
+
+.control.adjust {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}

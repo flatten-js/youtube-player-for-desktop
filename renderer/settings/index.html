@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' https://cdn.jsdelivr.net/;">
+    <title>Youtube Player for Desktop | Settings</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link rel="stylesheet" href="../assets/css/normalize.css">
+    <link rel="stylesheet" href="../assets/css/bulma.css">
+  </head>
+  <body>
+    <main>
+      <h1 class="title is-3">Settings</h1>
+
+      <section class="block">
+        <div class="card">
+          <div class="card-content">
+            <div class="content">
+              <h2 class="title is-4">Editable</h2>
+              <p>If this is enabled, the player will lose control.</p>
+              <label for="editable" class="checkbox">
+                <input id="editable" type="checkbox">
+                Enable
+              </label>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="block">
+        <h2 class="title is-4">Player</h2>
+
+        <div class="field is-horizontal">
+          <div class="field-label is-normal">
+            <label for="transparent" class="label">Thema</label>
+          </div>
+          <div class="field-body">
+            <div class="field is-normal">
+              <div class="control">
+                <div class="select">
+                  <select id="thema">
+                    <option value="dark">Dark</option>
+                    <option value="transparent">Transparent</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="field is-horizontal">
+          <div class="field-label is-normal">
+            <label for="videoid" class="label">VideoID</label>
+          </div>
+          <div class="field-body">
+            <div class="field has-addons">
+              <div class="control">
+                <input id="videoid" class="input" />
+              </div>
+              <div class="control">
+                <button class="button" id="apply">Apply</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="field is-horizontal">
+          <div class="field-label">
+            <label for="volume" class="label">Volume</label>
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <div class="control adjust">
+                <input id="volume" type="range" min="0" max="100" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="field is-horizontal">
+          <div class="field-label">
+            <label for="muted" class="label">Mute</label>
+          </div>
+          <div class="field-body">
+            <div class="field is-normal">
+              <div class="control adjust">
+                <input id="muted" class="checkbox" type="checkbox" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="field is-horizontal">
+          <div class="field-label">
+            <label for="looped" class="label">Loop</label>
+          </div>
+          <div class="field-body">
+            <div class="field is-normal">
+              <div class="control adjust">
+                <input id="looped" class="checkbox" type="checkbox" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <section class="block">
+        <h2 class="title is-4">System</h2>
+
+        <div class="field is-horizontal">
+          <div class="field-label">
+            <label for="always-top" class="label">Always Top</label>
+          </div>
+          <div class="field-body">
+            <div class="field is-normal">
+              <div class="control adjust">
+                <input id="always-top" class="checkbox" type="checkbox" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <script src="./_index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+.player {
+  padding: 1.25rem;
+  color: #fff;
+  font-family: 'Roboto', 'Noto Sans JP', sans-serif;
+  letter-spacing: .125rem;
+  cursor: pointer;
+}
+
+.player.--thema-dark {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.player.--thema-transparent {
+  background-color: transparent;
+}
+
+.player.--editable {
+  -webkit-app-region: drag;
+}
+
+.player__core {
+  display: none;
+}
+
+.player__title {
+  font-size: 1.5rem;
+  margin: 0 0 1rem 0;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.player__title::before {
+  content: "\200b";
+}
+
+.player-play-bar {
+  width: 100%;
+  height: 2px;
+  margin-bottom: 1rem;
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.player-play-bar .player-play-bar__bar {
+  width: 0%;
+  background: #fff;
+  height: 100%;
+}
+
+.player-details {
+  display: flex;
+}
