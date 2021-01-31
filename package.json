@@ -15,6 +15,7 @@
     }
   },
   "scripts": {
+    "dev": "electron .",
     "build": "electron-builder"
   },
   "dependencies": {
