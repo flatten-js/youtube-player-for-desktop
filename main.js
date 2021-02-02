@@ -4,9 +4,9 @@ require('dotenv').config({ path: path.join(__dirname, '.env') })
 const electron = require('electron')
 const { app, BrowserWindow, ipcMain, Menu, MenuItem } = electron
 
-const store = require('./store')
-
 const ipcRelay = new (require('./lib/ipc-relay.js'))()
+
+const store = require('./store')
 
 const WindowManager = require('./lib/wm.js')
 const wm = new WindowManager({ path: path.join(__dirname, 'renderer') })
@@ -86,6 +86,6 @@ ipcRelay.do('update/player-looped', 'player.looped')
 ipcRelay.do('update/player-editable')
 
 ipcMain.on('update/window-always-top', (e, cond) => {
-  store.set('system.always_top', cond)
+  store.config.set('system.always_top', cond)
   wm.main.setAlwaysOnTop(cond)
 })
